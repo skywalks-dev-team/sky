@@ -12,7 +12,6 @@ stylesheets[all][] = css/bootstrap.css.map
 scripts[] = js/functions.js
 scripts[] = js/bootstrap.js
 scripts[] = js/bootstrap.min.js
-scripts[] = js/jquery.min.js
 
 regions[search] = search
 regions[banner] = banner

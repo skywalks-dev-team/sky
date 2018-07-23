@@ -22,6 +22,6 @@ function night_preprocess_user_login_block(&$vars) {
   $vars['rendered'] = drupal_render_children($vars['form']);
 } 
 function night_preprocess_page(&$vars) {
-  drupal_add_js('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', 'external');
-  drupal_add_js('https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', 'external');
+  // drupal_add_js('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', 'external');
+  // drupal_add_js('https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', 'external');
 }
