@@ -89,10 +89,15 @@
 <nav class="navbar navbar-inverse no-mar">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a class="navbar-brand" href="#"><span class="sky">sky</span>walks</a>
     </div>
     <?php if ($main_menu): ?>
-      <div id="main-menu" class="navigation">
+      <div id="main-menu" class="collapse navbar-collapse navigation">
         <?php print theme('links__system_main_menu', array(
           'links' => $main_menu,
           'attributes' => array(
@@ -105,12 +110,12 @@
             'class' => array('element-invisible'),
           ),
         )); ?>
+        <div class="nav navbar-nav navbar-right">
+          <a id="show-search"><span class="glyphicon glyphicon-search"></span></a>
+            <?php print render($page['search']); ?>
+        </div>
       </div> <!-- /#main-menu -->
     <?php endif; ?>
-    <div class="nav navbar-nav navbar-right">
-    <a id="show-search"><span class="glyphicon glyphicon-search"></span></a>
-      <?php print render($page['search']); ?>
-    </div>
   </div>
 </nav>
 <!-- Main banner -->
@@ -119,15 +124,6 @@
     <?php print render($page['banner']); ?>
   </div>
 <?php endif; ?>
-<script type="text/javascript">
-jQuery('#show-search').click(function() {
-  jQuery('#search-block-form').show();
-  jQuery('#show-search').hide();
-})
-// jQuery('#edit-name--2').css('placeholder')
-jQuery('#edit-name').attr('placeholder','username or email');
-jQuery('#edit-pass').attr('placeholder','password');
-</script>
 <?php if ($page['about']): ?>
   <div class="container-fluid about-wrapper">
     <?php print render($page['about']); ?>
