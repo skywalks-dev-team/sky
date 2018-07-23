@@ -1,0 +1,30 @@
+name = night
+description = This theme demonstrates Drupal's default HTML markup and CSS styles. To learn how to build your own theme and override Drupal's default code, see the <a href="http://drupal.org/theme-guide">Theming Guide</a>.
+package = Core
+version = VERSION
+core = 7.x
+stylesheets[all][] = layout.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/bootstrap.min.css
+stylesheets[all][] = css/bootstrap.min.css.map
+stylesheets[all][] = css/bootstrap.css.map
+scripts[] = js/functions.js
+scripts[] = js/bootstrap.js
+scripts[] = js/bootstrap.min.js
+scripts[] = js/jquery.min.js
+
+regions[search] = search
+regions[banner] = banner
+regions[about] = about
+regions[content] = Content
+regions[contact] = contact
+regions[slides] = Slides
+
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+; Information added by Drupal.org packaging script on 2018-04-25
+version = "7.59"
+project = "drupal"
+datestamp = "1524673284"
