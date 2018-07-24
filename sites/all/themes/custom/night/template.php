@@ -1,4 +1,17 @@
 <?php
+function night_theme() {
+  $items = array();
+  // create custom user-login.tpl.php
+  $items['user_login'] = array(
+  'render element' => 'form',
+  'path' => drupal_get_path('theme', 'night') . '/templates',
+  'template' => 'user-login',
+  'preprocess functions' => array(
+  'night_preprocess_user_login'
+  ),
+ );
+return $items;
+}
 function night_form_search_block_form_alter(&$form, &$form_state, $form_id,$variables) {
     // $form['actions']['text'] = t('Search'); 
     $form['actions']['submit']['#attributes'] = array('class' => array('element-invisible')); 
@@ -8,13 +21,13 @@ function night_form_search_block_form_alter(&$form, &$form_state, $form_id,$vari
         '#suffix' => '</button>',
     );
 }
-function night_theme(&$existing, $type, $theme, $path) {
-   $hooks['user_login_block'] = array(
-     'template' => 'templates/user-login-block',
-     'render element' => 'form',
-   );
-   return $hooks;
- }
+// function night_theme(&$existing, $type, $theme, $path) {
+//    $hooks['user_login_block'] = array(
+//      'template' => 'templates/user-login-block',
+//      'render element' => 'form',
+//    );
+//    return $hooks;
+//  }
 function night_preprocess_user_login_block(&$vars) {
   $vars['name'] = render($vars['form']['name']);
   $vars['pass'] = render($vars['form']['pass']);
